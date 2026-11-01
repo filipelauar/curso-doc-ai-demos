@@ -63,11 +63,3 @@ COM OCR -> 299 caracteres em 1.9s
 - A célula do VLM é a única realmente lenta. **Pule sem dó** se o tempo apertar.
 - Não atualize a versão do Docling entre o ensaio e a aula: os nomes em
   `pipeline_options` mudam entre versões. O `uv.lock` existe para isso.
-
-## Regerar o notebook
-
-O notebook é gerado por script, para o conteúdo ficar versionado como texto legível:
-
-```bash
-uv run python gerar_notebook.py
-```
