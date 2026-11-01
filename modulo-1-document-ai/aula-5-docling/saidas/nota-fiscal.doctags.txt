@@ -1,0 +1,20 @@
+<doctag><section_header_level_1><loc_46><loc_33><loc_281><loc_40>NOTA FISCAL DE SERVIÇOS ELETRÔNICA</section_header_level_1>
+<text><loc_46><loc_47><loc_232><loc_52>Número 2026/001482    Série 1    Emissão 10/03/2026</text>
+<section_header_level_1><loc_34><loc_73><loc_81><loc_78>PRESTADOR</section_header_level_1>
+<section_header_level_1><loc_34><loc_84><loc_148><loc_89>EMPRESA XYZ SERVIÇOS LTDA</section_header_level_1>
+<text><loc_34><loc_92><loc_237><loc_97>CNPJ: 12.345.678/0001-99     Inscrição Municipal: 4.821.337</text>
+<text><loc_34><loc_101><loc_272><loc_106>Av. Afonso Pena, 1500 · Centro · Belo Horizonte/MG · CEP 30130-921</text>
+<section_header_level_1><loc_34><loc_121><loc_73><loc_126>TOMADOR</section_header_level_1>
+<section_header_level_1><loc_34><loc_132><loc_144><loc_136>CLIENTE ABC COMÉRCIO S.A.</section_header_level_1>
+<text><loc_34><loc_140><loc_125><loc_145>CNPJ: 98.765.432/0001-10</text>
+<text><loc_34><loc_148><loc_253><loc_153>Rua Oscar Freire, 220 · Jardins · São Paulo/SP · CEP 01426-000</text>
+<section_header_level_1><loc_34><loc_171><loc_146><loc_176>DISCRIMINAÇÃO DOS SERVIÇOS</section_header_level_1>
+<otsl><loc_33><loc_184><loc_467><loc_236><fcel>Descrição<ched>Qtd<ched>Valor unit.<ched>Total<nl><rhed>Consultoria em arquitetura de dados<fcel>2<fcel>500,00<fcel>1.000,00<nl><rhed>Implantação de pipeline de ingestão<fcel>1<fcel>250,00<fcel>250,00<nl><rhed>Treinamento da equipe técnica (8h)<fcel>1<fcel>800,00<fcel>800,00<nl></otsl>
+<text><loc_303><loc_247><loc_364><loc_252><loc_403><loc_247><loc_445><loc_252>Valor dos serviços R$ 2.050,00</text>
+<text><loc_303><loc_258><loc_333><loc_263>ISS (5%)</text>
+<text><loc_403><loc_258><loc_438><loc_263>R$ 102,50</text>
+<text><loc_303><loc_269><loc_393><loc_274>VALOR TOTAL DA NOTA</text>
+<text><loc_403><loc_269><loc_445><loc_274>R$ 1.947,50</text>
+<text><loc_34><loc_297><loc_259><loc_302>Vencimento: 10/04/2026     Forma de pagamento: Boleto bancário</text>
+<text><loc_34><loc_308><loc_154><loc_313>Código de verificação: 7F3A-99C1-B20D</text>
+</doctag>

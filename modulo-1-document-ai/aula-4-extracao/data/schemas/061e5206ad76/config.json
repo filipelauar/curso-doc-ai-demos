@@ -1,0 +1,134 @@
+{
+  "id": "061e5206ad76",
+  "name": "Invoices",
+  "json_schema": {
+    "type": "object",
+    "properties": {
+      "invoice_number": {
+        "type": "string",
+        "description": "Número da invoice"
+      },
+      "issue_date": {
+        "type": "string",
+        "description": "Data de emissão no formato AAAA-MM-DD"
+      },
+      "due_date": {
+        "type": "string",
+        "description": "Data de vencimento no formato AAAA-MM-DD"
+      },
+      "po_number": {
+        "type": "string",
+        "description": "Número do pedido de compra (PO), se houver"
+      },
+      "currency": {
+        "type": "string",
+        "description": "Moeda da invoice (código ISO 4217)",
+        "enum": [
+          "USD",
+          "EUR",
+          "GBP",
+          "CAD",
+          "BRL"
+        ]
+      },
+      "vendor": {
+        "type": "object",
+        "description": "Fornecedor que emitiu a invoice",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Nome do fornecedor"
+          },
+          "address": {
+            "type": "string",
+            "description": "Endereço completo do fornecedor"
+          },
+          "tax_id": {
+            "type": "string",
+            "description": "Identificação fiscal do fornecedor (EIN, VAT, GST etc.)"
+          },
+          "email": {
+            "type": "string",
+            "description": "E-mail do fornecedor"
+          }
+        }
+      },
+      "customer": {
+        "type": "object",
+        "description": "Cliente cobrado (Bill To)",
+        "properties": {
+          "name": {
+            "type": "string",
+            "description": "Nome do cliente"
+          },
+          "address": {
+            "type": "string",
+            "description": "Endereço completo do cliente"
+          }
+        }
+      },
+      "line_items": {
+        "type": "array",
+        "description": "Itens cobrados",
+        "items": {
+          "type": "object",
+          "properties": {
+            "description": {
+              "type": "string",
+              "description": "Descrição do item"
+            },
+            "quantity": {
+              "type": "number",
+              "description": "Quantidade"
+            },
+            "unit_price": {
+              "type": "number",
+              "description": "Preço unitário"
+            },
+            "amount": {
+              "type": "number",
+              "description": "Valor total do item"
+            }
+          }
+        }
+      },
+      "subtotal": {
+        "type": "number",
+        "description": "Subtotal antes de impostos"
+      },
+      "tax_amount": {
+        "type": "number",
+        "description": "Valor dos impostos"
+      },
+      "total_due": {
+        "type": "number",
+        "description": "Valor total a pagar"
+      },
+      "payment_terms": {
+        "type": "string",
+        "description": "Condições de pagamento"
+      },
+      "bank_account": {
+        "type": "string",
+        "description": "Dados bancários para pagamento (IBAN, conta ou instrução de pagamento)"
+      },
+      "return_true": {
+        "type": "string",
+        "description": "Return True",
+        "enum": [
+          "false"
+        ]
+      }
+    },
+    "required": [
+      "invoice_number",
+      "return_true"
+    ]
+  },
+  "system_prompt": "Você é um assistente especializado em extração de informações de documentos. Sua tarefa é analisar cuidadosamente o documento fornecido e extrair as informações solicitadas de forma precisa e completa.\n\nPara cada campo solicitado, você deve:\n1. Extrair o valor correto do documento\n2. Indicar o número da página (começando em 1) onde a informação foi encontrada\n3. Fornecer a transcrição exata do trecho do documento que contém a informação\n\nRegras importantes:\n- Seja preciso e fiel ao conteúdo do documento\n- A transcrição deve ser o trecho exato do texto original, sem modificações\n- Se uma informação não for encontrada no documento, retorne null para o valor, null para a página e null para a transcrição\n- O número da página deve corresponder à página real do documento onde a informação aparece",
+  "prompt": "Analise o documento a seguir e extraia todas as informações conforme o esquema definido.\n\nPara cada campo, forneça:\n- O valor extraído\n- O número da página onde a informação foi encontrada\n- A transcrição exata do trecho relevante do documento\n\nDocumento:\n{document_text}",
+  "model": "gpt-6-luna",
+  "reasoning_effort": "low",
+  "created_at": "2026-09-27T15:16:34.217316",
+  "updated_at": "2026-09-27T15:50:22.267422"
+}

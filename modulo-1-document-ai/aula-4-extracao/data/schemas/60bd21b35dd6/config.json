@@ -1,0 +1,154 @@
+{
+  "id": "60bd21b35dd6",
+  "name": "Notas Fiscais (NF-e)",
+  "json_schema": {
+    "type": "object",
+    "properties": {
+      "numero_nota": {
+        "type": "string",
+        "description": "Número da nota fiscal"
+      },
+      "serie": {
+        "type": "string",
+        "description": "Série da nota fiscal"
+      },
+      "chave_acesso": {
+        "type": "string",
+        "description": "Chave de acesso da NF-e (44 dígitos)"
+      },
+      "data_emissao": {
+        "type": "string",
+        "description": "Data de emissão no formato DD/MM/AAAA"
+      },
+      "natureza_operacao": {
+        "type": "string",
+        "description": "Natureza da operação"
+      },
+      "emitente": {
+        "type": "object",
+        "description": "Empresa que emitiu a nota",
+        "properties": {
+          "razao_social": {
+            "type": "string",
+            "description": "Razão social do emitente"
+          },
+          "cnpj": {
+            "type": "string",
+            "description": "CNPJ do emitente"
+          },
+          "inscricao_estadual": {
+            "type": "string",
+            "description": "Inscrição estadual do emitente"
+          },
+          "cidade_uf": {
+            "type": "string",
+            "description": "Cidade e UF do emitente"
+          }
+        }
+      },
+      "destinatario": {
+        "type": "object",
+        "description": "Destinatário da nota",
+        "properties": {
+          "nome": {
+            "type": "string",
+            "description": "Nome ou razão social do destinatário"
+          },
+          "cnpj_cpf": {
+            "type": "string",
+            "description": "CNPJ ou CPF do destinatário"
+          },
+          "endereco": {
+            "type": "string",
+            "description": "Endereço do destinatário"
+          },
+          "municipio": {
+            "type": "string",
+            "description": "Município do destinatário"
+          },
+          "uf": {
+            "type": "string",
+            "description": "UF do destinatário"
+          }
+        }
+      },
+      "itens": {
+        "type": "array",
+        "description": "Produtos listados na nota",
+        "items": {
+          "type": "object",
+          "properties": {
+            "codigo": {
+              "type": "string",
+              "description": "Código do produto"
+            },
+            "descricao": {
+              "type": "string",
+              "description": "Descrição do produto"
+            },
+            "ncm": {
+              "type": "string",
+              "description": "Código NCM"
+            },
+            "cfop": {
+              "type": "string",
+              "description": "CFOP"
+            },
+            "quantidade": {
+              "type": "number",
+              "description": "Quantidade"
+            },
+            "valor_unitario": {
+              "type": "number",
+              "description": "Valor unitário em reais"
+            },
+            "valor_total": {
+              "type": "number",
+              "description": "Valor total do item em reais"
+            }
+          }
+        }
+      },
+      "valor_total_produtos": {
+        "type": "number",
+        "description": "Valor total dos produtos em reais"
+      },
+      "valor_frete": {
+        "type": "number",
+        "description": "Valor do frete em reais"
+      },
+      "valor_icms": {
+        "type": "number",
+        "description": "Valor do ICMS em reais"
+      },
+      "valor_ipi": {
+        "type": "number",
+        "description": "Valor do IPI em reais"
+      },
+      "valor_total_nota": {
+        "type": "number",
+        "description": "Valor total da nota em reais"
+      },
+      "transportadora": {
+        "type": "string",
+        "description": "Razão social da transportadora"
+      },
+      "modalidade_frete": {
+        "type": "string",
+        "description": "Quem paga o frete",
+        "enum": [
+          "emitente",
+          "destinatario",
+          "terceiros",
+          "sem_frete"
+        ]
+      }
+    }
+  },
+  "system_prompt": "Você é um assistente especializado em extração de informações de documentos. Sua tarefa é analisar cuidadosamente o documento fornecido e extrair as informações solicitadas de forma precisa e completa.\n\nPara cada campo solicitado, você deve:\n1. Extrair o valor correto do documento\n2. Indicar o número da página (começando em 1) onde a informação foi encontrada\n3. Fornecer a transcrição exata do trecho do documento que contém a informação\n\nRegras importantes:\n- Seja preciso e fiel ao conteúdo do documento\n- A transcrição deve ser o trecho exato do texto original, sem modificações\n- Se uma informação não for encontrada no documento, retorne null para o valor, null para a página e null para a transcrição\n- O número da página deve corresponder à página real do documento onde a informação aparece",
+  "prompt": "Analise o documento a seguir e extraia todas as informações conforme o esquema definido.\n\nPara cada campo, forneça:\n- O valor extraído\n- O número da página onde a informação foi encontrada\n- A transcrição exata do trecho relevante do documento\n\nDocumento:\n{document_text}",
+  "model": "gpt-6-luna",
+  "reasoning_effort": "low",
+  "created_at": "2026-09-27T15:16:22.144922",
+  "updated_at": "2026-09-27T15:16:22.144928"
+}

@@ -1,0 +1,50 @@
+[project]
+name = "curso-doc-ai-demos"
+version = "0.1.0"
+description = "Demos do Curso Document AI"
+requires-python = ">=3.11"
+dependencies = ["python-dotenv"]
+
+# Grupos separados de proposito: Docling arrasta torch (~2 GB), entao a demo
+# da aula 2 instala em segundos.
+#   uv sync --group ocr      -> demo da aula 2 (comparador de OCR)
+#   uv sync --group extracao -> demo da aula 4 (extração com schema, backend)
+#   uv sync --group docling  -> notebook da aula 5
+#   uv sync --group agente   -> demo da aula 6 (agente sobre o corpus)
+[dependency-groups]
+ocr = [
+    "streamlit",
+    "pymupdf",
+    "pillow",
+    "azure-ai-documentintelligence",
+    "requests",
+]
+extracao = [
+    "fastapi",
+    "uvicorn",
+    "pydantic",
+    "openai",
+    "pymupdf",
+    "fpdf2",
+    "python-multipart",
+]
+docling = [
+    "docling",
+    "jupyter",
+    "ipywidgets",
+    "pandas",
+    # Extração estruturada (célula depois do VLM) — mesmo provider da aula 6.
+    "openai",
+    # Pipeline VLM acelerado em Apple Silicon; sem isto o Docling cai no
+    # Transformers/MPS e a mesma pagina leva minutos.
+    "mlx-vlm; sys_platform == 'darwin' and platform_machine == 'arm64'",
+]
+agente = [
+    "streamlit",
+    "openai",
+    "sentence-transformers",
+    "numpy",
+    "pymupdf",
+    "docling",
+    "requests",
+]

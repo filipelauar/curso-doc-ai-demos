@@ -1,0 +1,41 @@
+# Segredos
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.ipynb_checkpoints/
+
+# Node (aula 4)
+node_modules/
+dist/
+*.tsbuildinfo
+
+# Artefatos das demos (gerados, nao versionados)
+modulo-*/aula-6-agentic/corpus/*
+!modulo-*/aula-6-agentic/corpus/.gitkeep
+modulo-*/aula-6-agentic/indice/*
+!modulo-*/aula-6-agentic/indice/.gitkeep
+modulo-*/aula-6-agentic/traces/*
+!modulo-*/aula-6-agentic/traces/.gitkeep
+modulo-*/aula-5-docling/saidas/*
+!modulo-*/aula-5-docling/saidas/.gitkeep
+!modulo-*/aula-5-docling/saidas/*.md
+!modulo-*/aula-5-docling/saidas/*.txt
+!modulo-*/aula-5-docling/saidas/*.html
+modulo-*/aula-4-extracao/data/schemas/*/extractions/
+
+# Saídas de execução do notebook
+modulo-*/**/nb-exec.ipynb
+
+# Editor / ferramentas locais
+.claude/
+.vscode/
+.idea/
+
+# macOS
+.DS_Store
