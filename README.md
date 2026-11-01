@@ -21,7 +21,7 @@ Cada pasta tem um `README.md` com o passo a passo da demo.
 2. Clone o repositório e crie o seu `.env` **na raiz**:
 
    ```bash
-   git clone <url-deste-repositorio>
+   git clone https://github.com/filipelauar/curso-doc-ai-demos.git
    cd curso-doc-ai-demos
    cp .env.example .env    # e preencha as chaves que for usar
    ```
